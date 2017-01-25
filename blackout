@@ -1,0 +1,16 @@
+#!/bin/bash
+
+T=86400 # 24hrs
+BLACK_PREFIX="$(tput setaf 0)$(tput setab 0)"
+COLOR_RESET="$(tput sgr 0)"
+ROWS=$(tput lines)
+COLS=$(tput cols)
+Y_AXIS=$(seq 1 $ROWS)
+X_AXIS=$(seq 1 $COLS)
+
+echo "lines=$LINES"
+
+for i in $Y_AXIS; do
+  echo "$BLACK_PREFIX$(printf 'X%.0s' $X_AXIS)"
+done
+sleep $T
