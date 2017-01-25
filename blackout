@@ -12,8 +12,9 @@ resetColor() {
   printf "$COLOR_RESET\n"
 }
 trap resetColor SIGINT SIGTERM EXIT
+printf "$BLACK_PREFIX"
 
-for i in $Y_AXIS; do
-  echo "$BLACK_PREFIX$(printf 'X%.0s' $X_AXIS)"
+for _ in $Y_AXIS; do
+  printf 'X%.0s' $X_AXIS
 done
 sleep $T
